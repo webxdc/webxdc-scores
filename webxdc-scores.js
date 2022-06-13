@@ -69,7 +69,7 @@ window.highscores = (() => {
                     info
                 );
             } else {
-                console.log("[webxdc-score] Ignoring score: " + score + " < " + old_score);
+                console.log("[webxdc-score] Ignoring score: " + score + " <= " + old_score);
             }
         },
 
