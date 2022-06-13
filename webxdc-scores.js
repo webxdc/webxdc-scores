@@ -19,61 +19,18 @@ window.highscores = (() => {
 
     function getHighScores() {
         const selfAddr = window.webxdc.selfAddr;
-        const scoreboard = Object.keys(players).map((addr) => {
+        const scores = Object.keys(players).map((addr) => {
             return {
                 current: addr === selfAddr,
                 ...players[addr],
             };
         }).sort((a, b) => b.score - a.score);
 
-        const top = [];
-        const neighbors = [];
-        let selfIndex = -1;
-        for (let i = 0; i < scoreboard.length; i++) {
-            if (scoreboard[i].current) {
-                selfIndex = i;
-                break;
-            }
-        }
-        if (selfIndex === -1 || selfIndex < 4) {
-            for (let i = 0; i < scoreboard.length; i++) {
-                if (i > 4) {
-                    break;
-                }
-                const player = scoreboard[i];
-                player.pos = i + 1;
-                top[i] = player;
-            }            
-        } else {
-            let i = 0;
-            let player;
-            if (selfIndex - 1 >= 0) {
-                player = scoreboard[selfIndex - 1];
-                player.pos = selfIndex;
-                neighbors[i++] = player;
-            }
-
-            player = scoreboard[selfIndex];
-            player.pos = selfIndex + 1;
-            neighbors[i++] = player;
-
-            if (selfIndex + 1 < scoreboard.length) {
-                player = scoreboard[selfIndex + 1];
-                player.pos = selfIndex + 2;
-                neighbors[i] = player;
-            }
-
-            for (let i = 0; i < neighbors[0].pos - 1; i++) {
-                if (i > 2) {
-                    break;
-                }
-                const player = scoreboard[i];
-                player.pos = i + 1;
-                top[i] = player;
-            }
+        for (let i = 0; i < scores.length; i++) {
+            scores[i].pos = i + 1;
         }
 
-        return top.concat(neighbors);
+        return scores;
     }
 
     return {

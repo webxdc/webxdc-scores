@@ -35,9 +35,6 @@ interface HighScores {
     setScore(score: number, force: boolean): void;
     /**
      * Use this method to get data for high score tables.
-     * This method will return scores for the current player, plus their closest
-     * neighbors on each side. Will also return the top three players if the current
-     * player and their neighbors are not among them.
      * @returns an array of Player objects.
      */
     getHighScores(): Player[];
