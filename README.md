@@ -1,6 +1,6 @@
 # webxdc-scores
 
-An utility library to facilitate the process of creating score-based webxdc games.
+Library to facilitate the process of creating score-based webxdc games.
 
 ## Usage
 
