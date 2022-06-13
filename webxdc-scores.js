@@ -53,6 +53,7 @@ window.highscores = (() => {
             const old_score = getScore(addr);
             if (score > old_score) {
                 const name = window.webxdc.selfName;
+                players[addr] = {name: name, score: score};
                 let info = name + " scored " + score;
                 if (_appName) {
                     info += " in " + _appName;
