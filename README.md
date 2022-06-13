@@ -11,6 +11,7 @@ Copy the `webxdc-scores.js` file to your project's floder, then include it (toge
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
+
         <script src="webxdc.js"></script>
         <script src="./webxdc-scores.js"></script>
     </head>
