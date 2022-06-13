@@ -45,12 +45,4 @@ interface HighScores {
     getScoreboard(): string;
 }
 
-////////// ANCHOR: global
-declare global {
-  interface Window {
-    highscores: HighScores;
-  }
-}
-////////// ANCHOR_END: global
-
 export { HighScores };
