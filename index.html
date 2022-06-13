@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <script src="webxdc.js"></script>
+        <script src="./webxdc-scores.js"></script>
+        <link rel="stylesheet" href="./webxdc-scores.css"/>
+        <style>
+         html,body {
+             background: #A0E1F0;
+             height: 100%;
+             font-family:Verdana,sans-serif;
+             font-weight: bold;
+         }
+         .label {
+             background: #eee;
+             display: inline-block;
+             padding: 0.4em;
+             border-radius: 0.4em;
+         }
+         .btn {
+             display:inline-block;
+             color: #fff;
+             background: #ff9800;
+             padding: 1em;
+             border-radius: 1em;
+             margin-right: 1em;
+             text-decoration: none;
+             margin-bottom: 2em;
+             margin-top: 1em;
+         }
+        </style>
+    </head>
+    <body>
+        <h3 class="label">Score: <span id="self-score">0</span></h3>
+        <p style="text-align: center;">
+            <a class="btn" href="#" onclick="incScore(); return false;">CLICK ME!</a>
+        </p>
+        <div id="scoreboard"></div>
+        <script>
+         function updateScore() {
+             document.getElementById("self-score").innerHTML = window.webxdc_scores.getScore();
+         }
+
+         function updateScoreboard() {
+             document.getElementById('scoreboard').innerHTML = window.webxdc_scores.getScoreboard();
+         }
+
+         function incScore() {
+             window.webxdc_scores.setScore(window.webxdc_scores.getScore() + 1);
+             updateScore();
+             updateScoreboard();
+         }
+
+         window.webxdc_scores.init("Test Game").then(() => {
+             updateScore();
+             updateScoreboard();
+         });
+        </script>
+    </body>
+</html>
