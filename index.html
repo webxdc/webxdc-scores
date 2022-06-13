@@ -40,20 +40,20 @@
         <div id="scoreboard"></div>
         <script>
          function updateScore() {
-             document.getElementById("self-score").innerHTML = window.webxdc_scores.getScore();
+             document.getElementById("self-score").innerHTML = window.highscores.getScore();
          }
 
          function updateScoreboard() {
-             document.getElementById('scoreboard').innerHTML = window.webxdc_scores.getScoreboard();
+             document.getElementById('scoreboard').innerHTML = window.highscores.getScoreboard();
          }
 
          function incScore() {
-             window.webxdc_scores.setScore(window.webxdc_scores.getScore() + 1);
+             window.highscores.setScore(window.highscores.getScore() + 1);
              updateScore();
              updateScoreboard();
          }
 
-         window.webxdc_scores.init("Test Game").then(() => {
+         window.highscores.init("Test Game").then(() => {
              updateScore();
              updateScoreboard();
          });

@@ -1,4 +1,4 @@
-window.webxdc_scores = (() => {
+window.highscores = (() => {
     let players = [],
         _appName = "";
 

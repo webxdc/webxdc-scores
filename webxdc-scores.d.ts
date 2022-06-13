@@ -11,7 +11,7 @@ type Player = {
   current: boolean;
 };
 
-interface WebxdcScores {
+interface HighScores {
     /**
      * Initialize the scores API.
      * @param appName the app's name that will be shown in info-messages.
@@ -51,9 +51,9 @@ interface WebxdcScores {
 ////////// ANCHOR: global
 declare global {
   interface Window {
-    webxdc_scores: WebxdcScores<any>;
+    highscores: HighScores;
   }
 }
 ////////// ANCHOR_END: global
 
-export { WebxdcScores };
+export { HighScores };
