@@ -43,20 +43,12 @@
              document.getElementById("self-score").innerHTML = window.highscores.getScore();
          }
 
-         function updateScoreboard() {
-             document.getElementById('scoreboard').innerHTML = window.highscores.getScoreboard();
-         }
-
          function incScore() {
              window.highscores.setScore(window.highscores.getScore() + 1);
              updateScore();
-             updateScoreboard();
          }
 
-         window.highscores.init("Test Game").then(() => {
-             updateScore();
-             updateScoreboard();
-         });
+         window.highscores.init("Test Game", "scoreboard").then(updateScore);
         </script>
     </body>
 </html>

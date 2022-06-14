@@ -15,9 +15,10 @@ interface HighScores {
     /**
      * Initialize the scores API.
      * @param appName the app's name that will be shown in info-messages.
+     * @param scoreboard the id of an HTML element where the scoreboard should be injected.
      * @returns promise that resolves when the API is ready to be used.
      */
-    init(appName: string): Promise<void>;
+    init(appName: string, scoreboard?: string): Promise<void>;
     /**
      * Use this method to get the high score of the current player.
      * @returns the current player's high score.
@@ -38,11 +39,6 @@ interface HighScores {
      * @returns an array of Player objects.
      */
     getHighScores(): Player[];
-    /**
-     * Use this method to get the HTML markup of the scoreboard.
-     * @returns an string containing the HTML markup of the scoreboard.
-     */
-    getScoreboard(): string;
 }
 
 declare global {

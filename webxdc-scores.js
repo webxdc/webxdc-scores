@@ -1,6 +1,7 @@
 window.highscores = (() => {
     let players = [],
-        _appName = "";
+        _appName = "",
+        _container = undefined;
 
     function h(tag, attributes, ...children) {
         const element = document.createElement(tag);
@@ -33,13 +34,39 @@ window.highscores = (() => {
         return scores;
     }
 
+    function updateScoreboard() {
+        if (!_container) return;
+
+        let table = getHighScores();
+        let div = h("div");
+        for (let i = 0; i < table.length; i++) {
+            const player = table[i];
+            const pos = h("span", {class: "row-pos"}, player.pos);
+            pos.innerHTML += ".&nbsp;&nbsp;";
+            div.appendChild(
+                h("div", {class: "score-row" + (player.current ? " you" : "")},
+                  pos,
+                  h("span", {class: "row-name"}, player.name),
+                  h("span", {class: "row-score"}, player.score),
+                 )
+            );
+        }
+        _container.innerHTML = div.innerHTML;
+    }
+
     return {
-        init: (appName) => {
+        init: (appName, scoreboard) => {
             _appName = appName;
+            if (scoreboard) {
+                _container = document.getElementById(scoreboard);
+            }
             return window.webxdc.setUpdateListener((update) => {
                 const player = update.payload;
                 if (player.score > getScore(player.addr)) {
                     players[player.addr] = {name: player.name, score: player.score};
+                }
+                if (update.serial === update.max_serial) {
+                    updateScoreboard();
                 }
             }, 0);
         },
@@ -75,23 +102,5 @@ window.highscores = (() => {
         },
 
         getHighScores: getHighScores,
-
-        getScoreboard: () => {
-            let table = getHighScores();
-            let div = h("div");
-            for (let i = 0; i < table.length; i++) {
-                const player = table[i];
-                const pos = h("span", {class: "row-pos"}, player.pos);
-                pos.innerHTML += ".&nbsp;&nbsp;";
-                div.appendChild(
-                    h("div", {class: "score-row" + (player.current ? " you" : "")},
-                      pos,
-                      h("span", {class: "row-name"}, player.name),
-                      h("span", {class: "row-score"}, player.score),
-                     )
-                );
-            }
-            return div.innerHTML;
-        },
     };
 })();
