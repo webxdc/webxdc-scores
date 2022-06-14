@@ -1,7 +1,9 @@
 window.highscores = (() => {
     let players = [],
         _appName = "",
-        _container = undefined;
+        container = undefined,
+        maxserialKey = "webxdc-scores.max_serial",
+        playersKey = "webxdc-scores.players";
 
     function h(tag, attributes, ...children) {
         const element = document.createElement(tag);
@@ -35,7 +37,7 @@ window.highscores = (() => {
     }
 
     function updateScoreboard() {
-        if (!_container) return;
+        if (!container) return;
 
         let table = getHighScores();
         let div = h("div");
@@ -51,24 +53,28 @@ window.highscores = (() => {
                  )
             );
         }
-        _container.innerHTML = div.innerHTML;
+        container.innerHTML = div.innerHTML;
     }
 
     return {
         init: (appName, scoreboard) => {
             _appName = appName;
             if (scoreboard) {
-                _container = document.getElementById(scoreboard);
+                container = document.getElementById(scoreboard);
             }
+            players = JSON.parse(localStorage.getItem(playersKey) || "{}");
+            updateScoreboard();
             return window.webxdc.setUpdateListener((update) => {
                 const player = update.payload;
                 if (player.score > getScore(player.addr)) {
                     players[player.addr] = {name: player.name, score: player.score};
                 }
                 if (update.serial === update.max_serial) {
+                    localStorage.setItem(playersKey, JSON.stringify(players));
+                    localStorage.setItem(maxserialKey, update.max_serial);
                     updateScoreboard();
                 }
-            }, 0);
+            }, parseInt(localStorage.getItem(maxserialKey) || 0));
         },
 
         getScore: () => {
