@@ -1,3 +1,5 @@
+/* webxdc-scores v1.0.0
+ */
 window.highscores = (() => {
     let players = [],
         _appName = "",
