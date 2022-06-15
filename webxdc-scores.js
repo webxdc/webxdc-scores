@@ -68,7 +68,7 @@ window.highscores = (() => {
             updateScoreboard();
             return window.webxdc.setUpdateListener((update) => {
                 const player = update.payload;
-                if (player.score > getScore(player.addr)) {
+                if (player.force || player.score > getScore(player.addr)) {
                     players[player.addr] = {name: player.name, score: player.score};
                 }
                 if (update.serial === update.max_serial) {
@@ -83,10 +83,10 @@ window.highscores = (() => {
             return getScore(window.webxdc.selfAddr);
         },
 
-        setScore: (score, force) => {
+        setScore: (score, force = false) => {
             const addr = window.webxdc.selfAddr;
             const old_score = getScore(addr);
-            if (score > old_score) {
+            if (score > old_score || force) {
                 const name = window.webxdc.selfName;
                 players[addr] = {name: name, score: score};
                 let info = name + " scored " + score;
@@ -99,6 +99,7 @@ window.highscores = (() => {
                             addr: addr,
                             name: name,
                             score: score,
+                            force: force,
                         },
                         info: info,
                     },
