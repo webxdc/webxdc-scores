@@ -1,4 +1,4 @@
-/* webxdc-scores v1.1.1
+/* webxdc-scores v1.0.1
  */
 window.highscores = (() => {
     let players = [],
