@@ -31,9 +31,9 @@ interface HighScores {
      * If the new score is not ignored, an info-message will be sent in the form:
      * "PlayerName scored newScore in appName"
      * @param score the new high score.
-     * @param force if the new score should override the old score even if it is smaller.
+     * @param force if the new score should override the old score even if it is smaller. False by default.
      */
-    setScore(score: number, force: boolean): void;
+    setScore(score: number, force?: boolean): void;
     /**
      * Use this method to get data for high score tables.
      * @returns an array of Player objects.
