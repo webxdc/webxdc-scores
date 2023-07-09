@@ -1,4 +1,4 @@
-dist
+dist/*js
 webxdc.js
 webxdc.d.ts
 pnpm-lock.yaml
