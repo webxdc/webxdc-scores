@@ -4,12 +4,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/webxdc-scores.umd.cjs",
-  "module": "./dist/webxdc-scores.js",
+  "main": "./dist/webxdc-scores.umd.js",
+  "module": "./dist/webxdc-scores.mjs",
   "exports": {
     ".": {
       "import": "./dist/webxdc-scores.mjs",
-      "require": "./dist/webxdc-scores.umd.cjs"
+      "require": "./dist/webxdc-scores.umd.js"
     }
   },
   "scripts": {
