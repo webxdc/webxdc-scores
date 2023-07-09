@@ -1,5 +1,3 @@
-/* webxdc-scores v2.0.0
- */
 import jsSHA from "jssha";
 
 export const highscores = (() => {

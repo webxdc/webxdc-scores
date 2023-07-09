@@ -1,5 +1,6 @@
 {
   "name": "webxdc-scores",
+  "version": "2.0.0",
   "files": [
     "dist"
   ],
