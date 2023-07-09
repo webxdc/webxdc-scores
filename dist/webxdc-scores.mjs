@@ -715,7 +715,9 @@ const Ke = (() => {
           A
         );
       } else
-        console.log("[webxdc-score] Ignoring score: " + f + " <= " + o);
+        console.log(
+          "[webxdc-score] Ignoring score: " + f + " <= " + o
+        );
     },
     getHighScores: a
   };
