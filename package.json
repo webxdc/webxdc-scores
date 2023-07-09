@@ -1,6 +1,6 @@
 {
   "name": "webxdc-scores",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "files": [
     "dist"
   ],
@@ -10,7 +10,8 @@
     ".": {
       "import": "./dist/webxdc-scores.mjs",
       "require": "./dist/webxdc-scores.umd.js"
-    }
+    },
+    "./dist/webxdc-scores.css": "./dist/webxdc-scores.css"
   },
   "scripts": {
     "build": "vite build",
