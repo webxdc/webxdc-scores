@@ -51,6 +51,6 @@ Include webxdc-scores lib (together with `webxdc.js`) in your `index.html`:
 
 Then you will have an scores API via `window.highscores` object, check `dist/webxdc-scores.d.ts` file for documentation of the available API.
 
-> **⚠️ NOTE:** If you use `window.highscores.getScoreboard()` you need to include `dist/webxdc-scores.css` in your `index.html`, edit it to adapt the scoreboard style to your app.
+> **⚠️ NOTE:** If you pass the scoreboard parameter to `window.highscores.init()` you need to include `dist/webxdc-scores.css` in your `index.html`, edit it to adapt the scoreboard style to your app.
 
 For a full example check the `index.html` file included in this repository.
