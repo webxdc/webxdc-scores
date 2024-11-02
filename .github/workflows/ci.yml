@@ -15,11 +15,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
+      - run: npm install -g pnpm
       - run: pnpm install
       - run: pnpm check
       - run: pnpm build
       - run: |
           cd example
-          pnpm install
+          pnpm link ..
           pnpm check
           pnpm build
