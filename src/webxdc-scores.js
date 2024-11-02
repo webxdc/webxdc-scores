@@ -8,8 +8,8 @@ export const highscores = (() => {
   const maxserialKey = "_webxdc-scores_.max_serial",
     scoreboardsKey = "_webxdc-scores_.scoreboards";
   const selfID = new jsSHA("SHA-512", "TEXT", { encoding: "UTF8" })
-      .update(window.webxdc.selfAddr)
-        .getHash("HEX");
+    .update(window.webxdc.selfAddr)
+    .getHash("HEX");
 
   const h = (tag, attributes, ...children) => {
     const element = document.createElement(tag);
