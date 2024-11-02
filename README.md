@@ -49,6 +49,6 @@ Include webxdc-scores lib (together with `webxdc.js`) in your `index.html`:
 </html>
 ```
 
-Then you will have an scores API via `window.highscores` object, check `dist/webxdc-scores.d.ts` file for documentation of the available API.
+Then you will have an scores API via `window.highscores` object, check [dist/webxdc-scores.d.ts](https://github.com/webxdc/webxdc-scores/blob/main/dist/webxdc-scores.d.ts) file for documentation of the available API.
 
-For a full example check the `example/index.html` file included in this repository.
+For a full example check the [example/index.html](https://github.com/webxdc/webxdc-scores/blob/main/example/index.html) file.
