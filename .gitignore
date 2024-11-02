@@ -9,3 +9,5 @@ node_modules
 .idea
 .DS_Store
 *~
+
+example/pnpm-lock.yaml
