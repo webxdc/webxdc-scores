@@ -7,6 +7,9 @@ export const highscores = (() => {
     _onHighscoresChanged = () => {};
   const maxserialKey = "_webxdc-scores_.max_serial",
     scoreboardsKey = "_webxdc-scores_.scoreboards";
+  const selfID = new jsSHA("SHA-512", "TEXT", { encoding: "UTF8" })
+      .update(window.webxdc.selfAddr)
+        .getHash("HEX");
 
   const h = (tag, attributes, ...children) => {
     const element = document.createElement(tag);
@@ -25,9 +28,6 @@ export const highscores = (() => {
   };
 
   return {
-    selfID: new jsSHA("SHA-512", "TEXT", { encoding: "UTF8" })
-      .update(window.webxdc.selfAddr)
-      .getHash("HEX"),
     init: function ({
       getAnnouncement,
       compareScores,
@@ -77,12 +77,11 @@ export const highscores = (() => {
     },
 
     getScore: function (scoreboard) {
-      return getScore(this.selfID, scoreboard);
+      return getScore(selfID, scoreboard);
     },
 
     setScore: function (score, force = false, scoreboard = undefined) {
       const oldScore = this.getScore(scoreboard);
-      const selfID = this.selfID;
       if (force || _compareScores(score, oldScore, scoreboard) > 0) {
         if (scoreboards[scoreboard] === undefined) {
           scoreboards[scoreboard] = {};
@@ -110,7 +109,6 @@ export const highscores = (() => {
 
     getHighScores: function (scoreboard) {
       const players = scoreboards[scoreboard] || {};
-      const selfID = this.selfID;
       const scores = Object.keys(players)
         .map((id) => {
           return {

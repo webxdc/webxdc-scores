@@ -61,9 +61,6 @@ interface HighScores<T> {
    * @returns a div HTMLElement with the scoreboard rows inside.
    */
   renderScoreboard(scoreboard?: string): HTMLElement;
-  /** The current player's own ID.
-   */
-  selfID: string;
 }
 
 declare global {
