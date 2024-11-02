@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - main
 
 jobs:
   build:
@@ -14,6 +15,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - run: npm install
-      - run: npm run format:check
-      - run: npm test
+      - run: pnpm install
+      - run: pnpm check
+      - run: pnpm build
+      - run: |
+          cd example
+          pnpm install
+          pnpm check
+          pnpm build

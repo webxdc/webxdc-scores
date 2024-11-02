@@ -17,8 +17,7 @@ jobs:
           node-version: 16.x
 
       - run: npm install
-      - run: npm run format:check
-      - run: npm test
+      - run: npm run check
       - run: npm run build
 
       - name: Release

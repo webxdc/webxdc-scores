@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <script src="webxdc.js"></script>
-    <script src="./dist/webxdc-scores.umd.js"></script>
-    <link rel="stylesheet" href="./dist/webxdc-scores.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/webxdc-scores/dist/webxdc-scores.css"
+    />
     <style>
       html,
       body {
@@ -33,18 +35,21 @@
       <a class="btn" href="#" onclick="incScore(); return false;">CLICK ME!</a>
     </p>
     <div id="scoreboard"></div>
-    <script>
-      function updateScore() {
-        document.getElementById("self-score").innerHTML =
-          window.highscores.getScore();
-      }
+    <script type="module">
+      import "webxdc-scores";
+      const scoreboard = document.getElementById("scoreboard");
 
-      function incScore() {
+      await window.highscores.init({
+        getAnnouncement: (name, score) => `${name} scored ${score}, amazing!`,
+        onHighscoresChanged: () => {
+          document.getElementById("self-score").innerText =
+            window.highscores.getScore();
+          scoreboard.innerHTML = window.highscores.renderScoreboard().innerHTML;
+        },
+      });
+
+      window.incScore = () =>
         window.highscores.setScore(window.highscores.getScore() + 1);
-        updateScore();
-      }
-
-      window.highscores.init("Test Game", "scoreboard").then(updateScore);
     </script>
   </body>
 </html>

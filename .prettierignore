@@ -1,5 +1,2 @@
-dist/*js
-webxdc.js
-webxdc.d.ts
+dist
 pnpm-lock.yaml
-package-lock.json
