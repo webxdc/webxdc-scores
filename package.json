@@ -1,12 +1,28 @@
 {
   "name": "webxdc-scores",
+  "description": "Highscores API for webxdc apps",
   "version": "2.0.2",
+  "license": "MIT",
+  "author": "adbenitez",
+  "keywords": [
+    "webxdc",
+    "deltachat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webxdc/webxdc-scores.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webxdc/webxdc-scores/issues"
+  },
+  "homepage": "https://github.com/webxdc/webxdc-scores",
+  "main": "./dist/webxdc-scores.umd.js",
+  "module": "./dist/webxdc-scores.mjs",
+  "types": "./dist/webxdc-scores.d.ts",
+  "source": "./src/webxdc-scores.js",
   "files": [
     "dist"
   ],
-  "main": "./dist/webxdc-scores.umd.js",
-  "module": "./dist/webxdc-scores.mjs",
-  "typings": "./dist/webxdc-scores.d.ts",
   "exports": {
     ".": {
       "import": "./dist/webxdc-scores.mjs",
@@ -16,21 +32,14 @@
   },
   "scripts": {
     "build": "vite build",
-    "dev-mini": "vite --port 3000",
-    "dev": "concurrently \"npm run dev-mini\" \"webxdc-dev run http://localhost:3000\"",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test": "vitest"
+    "fix": "prettier --write .",
+    "check": "prettier --check ."
   },
   "devDependencies": {
-    "concurrently": "^8.1.0",
-    "jsdom": "^22.1.0",
-    "prettier": "2.8.8",
-    "vite": "^4.3.2",
-    "vitest": "^0.32.2",
-    "webxdc-dev": "^0.17.0"
+    "prettier": "^3.3.3",
+    "vite": "^5.4.10"
   },
   "dependencies": {
-    "jssha": "^3.3.0"
+    "jssha": "^3.3.1"
   }
 }
