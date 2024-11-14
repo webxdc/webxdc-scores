@@ -1,5 +1,9 @@
 # Highscores
 
+[![npm package](https://img.shields.io/npm/v/@webxdc/highscores.svg)](https://npmjs.com/package/@webxdc/highscores)
+[![CI](https://github.com/webxdc/highscores/actions/workflows/ci.yml/badge.svg)](https://github.com/webxdc/highscores/actions/workflows/ci.yml)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 Library to facilitate the process of creating score-based webxdc games.
 It can handle multiple scoreboards at the same time.
 
