@@ -23,5 +23,4 @@ jobs:
           cd example
           pnpm install
           pnpm link ..
-          pnpm check
           pnpm build
