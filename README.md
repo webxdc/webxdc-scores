@@ -45,7 +45,9 @@ The `webxdc.js` lib also needs to be included in your `index.html`:
       // you can use window.highscores here
     </script>
   </head>
-  <body>...</body>
+  <body>
+    ...
+  </body>
 </html>
 ```
 
@@ -58,7 +60,6 @@ Include webxdc-scores lib (together with `webxdc.js`) in your `index.html`:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-
     <script src="webxdc.js"></script>
     <script src="./node_modules/@webxdc/highscores/dist/webxdc-scores.umd.js"></script>
   </head>
