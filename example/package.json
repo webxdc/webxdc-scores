@@ -15,6 +15,6 @@
     "webxdc-vite-plugins": "github:webxdc/webxdc-vite-plugins"
   },
   "dependencies": {
-    "webxdc-scores": "@webxdc/highscores"
+    "@webxdc/highscores": "latest"
   }
 }
