@@ -55,24 +55,6 @@ The `webxdc.js` lib also needs to be included in your `index.html`:
 </html>
 ```
 
-## Usage without modules
-
-Include webxdc-scores lib (together with `webxdc.js`) in your `index.html`:
-
-```html
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <script src="webxdc.js"></script>
-    <script src="./node_modules/@webxdc/highscores/dist/webxdc-scores.umd.js"></script>
-  </head>
-  <body>
-    ...
-  </body>
-</html>
-```
-
-Then you can access the API via `window.highscores` object, check [dist/highscores.d.ts](https://github.com/webxdc/highscores/blob/main/dist/highscores.d.ts) file for documentation of the available API.
+Check [dist/highscores.d.ts](https://github.com/webxdc/highscores/blob/main/dist/highscores.d.ts) file for documentation of the available API.
 
 For a full example check the [example/index.html](https://github.com/webxdc/highscores/blob/main/example/index.html) file.

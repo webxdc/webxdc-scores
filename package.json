@@ -16,28 +16,25 @@
     "url": "https://github.com/webxdc/highscores/issues"
   },
   "homepage": "https://github.com/webxdc/highscores",
-  "main": "./dist/highscores.umd.js",
-  "module": "./dist/highscores.mjs",
-  "types": "./dist/highscores.d.ts",
+  "main": "./src/highscores.js",
+  "module": "./src/highscores.js",
+  "types": "./src/highscores.d.ts",
   "source": "./src/highscores.js",
   "files": [
-    "dist"
+    "src"
   ],
   "exports": {
     ".": {
-      "import": "./dist/highscores.mjs",
-      "require": "./dist/highscores.umd.js"
+      "import": "./src/highscores.js"
     },
-    "./dist/highscores.css": "./dist/highscores.css"
+    "./src/highscores.css": "./src/highscores.css"
   },
   "scripts": {
-    "build": "vite build",
     "fix": "prettier --write .",
     "check": "prettier --check ."
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
-    "vite": "^5.4.10"
+    "prettier": "^3.3.3"
   },
   "dependencies": {
     "jssha": "^3.3.1"
