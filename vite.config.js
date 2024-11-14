@@ -6,10 +6,10 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "src/webxdc-scores.js"),
-      name: "webxdc-scores",
+      entry: resolve(__dirname, "src/highscores.js"),
+      name: "@webxdc/highscores",
       // the proper extensions will be added
-      fileName: "webxdc-scores",
+      fileName: "highscores",
     },
   },
 });

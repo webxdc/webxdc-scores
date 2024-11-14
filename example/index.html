@@ -6,7 +6,7 @@
     <script src="webxdc.js"></script>
     <link
       rel="stylesheet"
-      href="./node_modules/webxdc-scores/dist/webxdc-scores.css"
+      href="./node_modules/@webxdc/highscores/dist/highscores.css"
     />
     <style>
       html,
@@ -36,7 +36,7 @@
     </p>
     <div id="scoreboard"></div>
     <script type="module">
-      import "webxdc-scores";
+      import "@webxdc/highscores";
       const scoreboard = document.getElementById("scoreboard");
 
       await window.highscores.init({

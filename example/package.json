@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "build": "vite build",
     "start": "vite --port 3000",
+    "build": "vite build",
     "emulator": "concurrently \"npm run start\" \"webxdc-dev run http://localhost:3000\"",
     "fix": "prettier --write .",
     "check": "prettier --check ."
@@ -15,6 +15,6 @@
     "webxdc-vite-plugins": "github:webxdc/webxdc-vite-plugins"
   },
   "dependencies": {
-    "webxdc-scores": "github:webxdc/webxdc-scores"
+    "webxdc-scores": "@webxdc/highscores"
   }
 }

@@ -11,3 +11,5 @@ node_modules
 *~
 
 example/pnpm-lock.yaml
+example/dist
+example/dist-xdc

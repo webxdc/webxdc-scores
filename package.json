@@ -1,5 +1,5 @@
 {
-  "name": "webxdc-scores",
+  "name": "@webxdc/highscores",
   "description": "Highscores API for webxdc apps",
   "version": "4.0.1",
   "license": "MIT",
@@ -10,25 +10,25 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/webxdc/webxdc-scores.git"
+    "url": "https://github.com/webxdc/highscores.git"
   },
   "bugs": {
-    "url": "https://github.com/webxdc/webxdc-scores/issues"
+    "url": "https://github.com/webxdc/highscores/issues"
   },
-  "homepage": "https://github.com/webxdc/webxdc-scores",
-  "main": "./dist/webxdc-scores.umd.js",
-  "module": "./dist/webxdc-scores.mjs",
-  "types": "./dist/webxdc-scores.d.ts",
-  "source": "./src/webxdc-scores.js",
+  "homepage": "https://github.com/webxdc/highscores",
+  "main": "./dist/highscores.umd.js",
+  "module": "./dist/highscores.mjs",
+  "types": "./dist/highscores.d.ts",
+  "source": "./src/highscores.js",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/webxdc-scores.mjs",
-      "require": "./dist/webxdc-scores.umd.js"
+      "import": "./dist/highscores.mjs",
+      "require": "./dist/highscores.umd.js"
     },
-    "./dist/webxdc-scores.css": "./dist/webxdc-scores.css"
+    "./dist/highscores.css": "./dist/highscores.css"
   },
   "scripts": {
     "build": "vite build",
