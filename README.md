@@ -50,6 +50,6 @@ Include webxdc-scores lib (together with `webxdc.js`) in your `index.html`:
 </html>
 ```
 
-Then you can access the API via `window.highscores` object, check [dist/webxdc-scores.d.ts](https://github.com/webxdc/highscores/blob/main/dist/webxdc-scores.d.ts) file for documentation of the available API.
+Then you can access the API via `window.highscores` object, check [dist/highscores.d.ts](https://github.com/webxdc/highscores/blob/main/dist/highscores.d.ts) file for documentation of the available API.
 
 For a full example check the [example/index.html](https://github.com/webxdc/highscores/blob/main/example/index.html) file.
