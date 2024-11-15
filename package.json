@@ -23,6 +23,7 @@
   "files": [
     "src"
   ],
+  "type": "module",
   "exports": {
     ".": {
       "import": "./src/highscores.js"
