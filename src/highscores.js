@@ -4,7 +4,8 @@ export const highscores = (() => {
   let scoreboards = {},
     _getAnnouncement = (name, score) => `${name} scored ${score}`,
     _compareScores = (score1, score2) => score1 - score2,
-    _onHighscoresChanged = () => {};
+    _onHighscoresChanged = () => {},
+    _getInitialScore = () => 0;
   const maxserialKey = "_webxdc-scores_.max_serial",
     scoreboardsKey = "_webxdc-scores_.scoreboards";
   const selfID = new jsSHA("SHA-512", "TEXT", { encoding: "UTF8" })
@@ -24,7 +25,7 @@ export const highscores = (() => {
 
   const getScore = (id, scoreboard) => {
     const players = scoreboards[scoreboard] || {};
-    return players[id] ? players[id].score : 0;
+    return players[id] ? players[id].score : _getInitialScore();
   };
 
   return {
@@ -32,6 +33,7 @@ export const highscores = (() => {
       getAnnouncement,
       compareScores,
       onHighscoresChanged,
+      getInitialScore,
     } = {}) {
       if (getAnnouncement) {
         _getAnnouncement = getAnnouncement;
@@ -43,6 +45,10 @@ export const highscores = (() => {
 
       if (onHighscoresChanged) {
         _onHighscoresChanged = onHighscoresChanged;
+      }
+
+      if (getInitialScore) {
+        _getInitialScore = getInitialScore;
       }
 
       scoreboards = JSON.parse(localStorage.getItem(scoreboardsKey) || "{}");

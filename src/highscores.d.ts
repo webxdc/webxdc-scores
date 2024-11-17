@@ -24,6 +24,11 @@ type InitOptions<T> = {
   compareScores?: (score1: T, score2: T, scoreboard?: string) => number;
   /** callback that will be called when the high scores changed for a scoreboard */
   onHighscoresChanged?: (scoreboard?: string) => void;
+  /** A function that returns the default initial score that is returned by window.highscores.getScore() if there is no highscore yet.
+      By default the initial score is zero, you need to provide this function if you
+      are not passing a number to window.highscores.setScore()
+    */
+  getInitialScore?: (scoreboard?: string) => T;
 };
 
 interface HighScores<T> {
