@@ -1,5 +1,3 @@
-import jsSHA from "jssha";
-
 export const highscores = (() => {
   let scoreboards = {},
     _getAnnouncement = (name, score) => `${name} scored ${score}`,
@@ -8,9 +6,7 @@ export const highscores = (() => {
     _getInitialScore = () => 0;
   const maxserialKey = "_webxdc-scores_.max_serial",
     scoreboardsKey = "_webxdc-scores_.scoreboards";
-  const selfID = new jsSHA("SHA-512", "TEXT", { encoding: "UTF8" })
-    .update(window.webxdc.selfAddr)
-    .getHash("HEX");
+  const selfID = window.webxdc.selfAddr;
 
   const h = (tag, attributes, ...children) => {
     const element = document.createElement(tag);
